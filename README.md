@@ -1,3 +1,3 @@
 # Lothlorien_martfarming
 
-### pip install -r requirements.txt
+### Para Instalar usar: pip install -r requirements.txt
