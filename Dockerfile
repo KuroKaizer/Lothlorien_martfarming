@@ -1,4 +1,4 @@
-FROM python:3.11.2-alpine:3.17
+FROM python:3.10.4-alpine3.15
 
 WORKDIR /app
 
@@ -9,3 +9,7 @@ RUN  apk update \
 COPY ./requirements.txt ./
 
 RUN pip install -r requirements.txt
+
+COPY  ./ ./
+
+CMD ["python", "manage.py", "0.0.0.0:8000"]
