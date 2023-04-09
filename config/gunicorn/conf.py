@@ -1,5 +1,5 @@
-name = 'docker_smartfarming'
+name = 'Lothlorien_martfaming' 
 loglevel = 'info'
 errorlog = '-'
 accesslog = '-'
-workers = 2
+workers = 1

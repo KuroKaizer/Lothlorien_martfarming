@@ -5,6 +5,8 @@ services:
     image: postgres:14.7-alpine3.17
     volumes: 
       - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
 
   django_app:
     build: .
@@ -19,7 +21,7 @@ services:
     ports:
       - 8000:80
     volumes:
-      - ./config/nginx/conf.d:etc/nginx/conf.d
+      - ./config/nginx/conf.d:/etc/nginx/conf.d/
       - static:/code/static
     depends_on:
       - django_app  

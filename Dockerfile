@@ -14,4 +14,8 @@ RUN pip install -r requirements.txt
 
 COPY  ./ ./
 
-CMD ["gunicorn", "-c", "config/gunicorn/config.py", "--bind", "8000", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
+EXPOSE 8000
+
+RUN python manage.py collectstatic --no-input
+
+CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8000", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
