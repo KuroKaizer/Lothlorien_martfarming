@@ -1,4 +1,6 @@
-FROM python:3.10.4-alpine3.15
+FROM python:3.11-alpine3.16
+
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
@@ -12,4 +14,4 @@ RUN pip install -r requirements.txt
 
 COPY  ./ ./
 
-CMD ["python", "manage.py", "0.0.0.0:8000"]
+CMD ["gunicorn", "-c", "config/gunicorn/config.py", "--bind", "8000", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
