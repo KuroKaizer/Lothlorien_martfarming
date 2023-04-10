@@ -81,7 +81,6 @@ DATABASES = DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        #'-e POSTGRES_PASSWORD': 'postgres',
         'HOST': 'db_postgres',
         'PORT': 5432,
     }
@@ -123,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "/code/static"
 
+STATIC_ROOT = "/code/static"
 
 
 # Default primary key field type
