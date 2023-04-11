@@ -18,4 +18,4 @@ EXPOSE 8000
 
 RUN /bin/sh -c python manage.py collectstatic 
 
-CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", "137.184.1.44", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
+CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8000", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
