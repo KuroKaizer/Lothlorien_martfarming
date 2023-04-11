@@ -19,7 +19,7 @@ services:
   nginx:
     image: nginx:1.23.4-alpine
     ports:
-      - 8001:80
+      - 137.184.1.44:80
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d/
       - static:/static
