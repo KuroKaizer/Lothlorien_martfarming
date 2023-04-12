@@ -1,4 +1,4 @@
-name = 'Lothlorien_martframing' 
+name = 'Lothlorien_martfarming' 
 loglevel = 'info'
 errorlog = '-'
 accesslog = '-'
