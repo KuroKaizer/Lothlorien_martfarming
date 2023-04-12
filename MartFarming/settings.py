@@ -25,7 +25,6 @@ SECRET_KEY = "django-insecure-q^#1fcn%!m#aj6&+k!#)d#5fr8qeje#p37ymd(nu7(d@hla4i7
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ["*"]
 
 
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "autenticacion",
     "farming",
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -76,16 +77,16 @@ WSGI_APPLICATION = "MartFarming.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'farming_db',
-#        'USER': 'madraton',
-#        'PASSWORD':'kakaroto',
-#        'HOST': '127.0.0.1',
-#        'PORT': 5432,
-#    }
-#}
+"""DATABASES = DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'farming_db',
+        'USER': 'madraton',
+        'PASSWORD':'kakaroto',
+        'HOST': '127.0.0.1',
+        'PORT': 5432,
+       }
+}"""
 
 DATABASES = DATABASES = {
     'default': {
@@ -142,3 +143,5 @@ STATIC_URL = "/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_ROOT = "static/"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
