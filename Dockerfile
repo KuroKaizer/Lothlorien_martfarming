@@ -16,6 +16,6 @@ COPY  ./ ./
 
 EXPOSE 8001
 
-RUN /bin/sh -c python manage.py collectstatic 
+#RUN /bin/sh -c python manage.py collectstatic 
 
 CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8001", "--chdir", "MartFarming", "MartFarming.wsgi:application"]
