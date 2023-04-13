@@ -9,4 +9,4 @@ urlpatterns = [
     path('', include('farming.urls')),
     path('home/', include('farming.urls')),
     path('usuario/', include('autenticacion.urls')),   
-] 
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "whitenoise.runserver_nostatic",
+    #"whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "autenticacion",
     "farming",
@@ -151,9 +151,9 @@ USE_TZ = True
 # STATIC
 STATIC_URL = "/static/"
 
-STATIC_ROOT = str(BASE_DIR / "staticfiles")
+STATIC_ROOT = str(BASE_DIR / "staticfiles/")
 
-STATICFILES_DIRS = [str(BASE_DIR / "static/")]  # noqa
+STATICFILES_DIRS = [str(BASE_DIR / "static")]  # noqa
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
