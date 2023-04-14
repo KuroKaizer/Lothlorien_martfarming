@@ -28,7 +28,7 @@ services:
       gunicorn MartFarming.wsgi:application --bind 0.0.0.0:8001 --workers=3
       "
     ports:
-      - "8001:8000"    
+      - "8001:8001"    
     depends_on:
       - db_postgres
     volumes:
