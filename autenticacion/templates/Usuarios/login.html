@@ -25,9 +25,10 @@
     <div class="card-body">
       <p class="login-box-msg">Iniciar Seción</p>
 
-      <form action="http://127.0.0.1:8000/home/" method="post">
+      <form action="http://137.184.1.44:8001/home/" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Correo">
+          {% csrf_token %}
+          <input type="user" class="form-control" placeholder="Usuario">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -63,7 +64,7 @@
         <a href="forgot-password.html">Olvide mi contraseña</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Registar un nuevo Usuario</a>
+        <a href="http://137.184.1.44:8001/usuario/registrar/" class="text-center">Registar un nuevo Usuario</a>
       </p>
     </div>
     <!-- /.card-body -->
