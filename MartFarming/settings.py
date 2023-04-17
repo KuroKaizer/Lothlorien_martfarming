@@ -77,7 +77,7 @@ WSGI_APPLICATION = "MartFarming.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = DATABASES = {
+"""DATABASES = DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'farming_db',
@@ -86,7 +86,7 @@ DATABASES = DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': 5432,
        }
-}
+}"""
 
 """DATABASES = DATABASES = {
     'default': {
@@ -101,7 +101,7 @@ DATABASES = DATABASES = {
 # DATABASES
 # -----------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         "NAME": os.environ.get("POSTGRES_DB"),
@@ -112,7 +112,7 @@ DATABASES = DATABASES = {
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True  # noqa F405
-DATABASES["default"]["CONN_MAX_AGE"] = os.getenv("CONN_MAX_AGE", default=60)"""  # noqa F405
+DATABASES["default"]["CONN_MAX_AGE"] = os.getenv("CONN_MAX_AGE", default=60)  # noqa F405
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
